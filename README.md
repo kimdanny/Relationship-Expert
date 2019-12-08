@@ -21,4 +21,4 @@
 
 To get the model check point file, you can either  
 - Run Sentiment_Analysis/Transformers for Sentiment Analysis.ipynb (Recommended to run it on GPU environment)
-- Download [Bert-model.pt](https://drive.google.com/open?id=1w8S5IlQjexL2ERZAE_s1Q98jWA4LfhkD) and place it in your working directory, or `path="./data/Bert-model.pt"` to fit `model_loader` function. 
+- Download [Bert-model.pt](https://drive.google.com/open?id=1w8S5IlQjexL2ERZAE_s1Q98jWA4LfhkD) and place it in your working directory, or `path="./Bert-model.pt"` to fit `model_loader` function. 
