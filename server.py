@@ -74,7 +74,7 @@ model = BERTGRUSentiment(bert,
                          dropout=0.25)
 
 
-def model_loader(path="./Bert-model.pk"):
+def model_loader(path="./Bert-model.pt"):
     if os.path.isfile(path):
         checkpoint = torch.load(path)
         model = checkpoint['model']
@@ -110,19 +110,20 @@ def predict_sentiment(model, tokenizer, sentence):
     return prediction.item()
 
 
+
 @app.route("/get_advice",  methods=['POST'])
 def postAdvice():
     print("server code has been called and request.json is about to shown")
     print(request.json)
     userText = request.json
-
+    res = "Do not send it"
     output = predict_sentiment(model, tokenizer, userText)
 
+    if output > 0.5: # happy
+        res= "Feel free to send it"
 
-    response = "Our AI has analysed your response and judges it would be \
-best for you not to send that response. Your text was "+userText
 
-    return response
+    return res
 
 
 

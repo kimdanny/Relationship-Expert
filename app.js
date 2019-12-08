@@ -471,7 +471,7 @@ function sendSecondMessage(recipientId, messageText) {
 
   request.post('http://localhost:5000/get_advice', { json: messageText }, (err, res, response) => {
   if (err) { return console.log(err); }
-  console.log("this is in the sccond message fn")
+  console.log("this is in the second message fn")
   console.log(response);
 
   
