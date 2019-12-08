@@ -74,7 +74,7 @@ model = BERTGRUSentiment(bert,
                          dropout=0.25)
 
 
-def model_loader(path="./decoder-5-3000.pkl"):
+def model_loader(path="./data/Bert-model.pt"):
     if os.path.isfile(path):
         checkpoint = torch.load(path)
         model = checkpoint['model']
