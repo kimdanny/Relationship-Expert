@@ -319,7 +319,7 @@ function receivedMessage(event) {
 
       default:
         
-        if (nextResponseShouldAdvise == "true") {sendSecondMessage(senderID); }
+        if (nextResponseShouldAdvise == "true") {sendSecondMessage(senderID,messageText); }
         else {sendTextMessage(senderID, messageText);}
         
     }
@@ -451,7 +451,7 @@ function sendHiMessage(recipientId) {
     },
     message: {
       text: `
-      Hello, welcome to BotWise, the bot that helps you have wiser, better conversations. Type the message you're considering sending.
+      Hello, welcome to BotWise, the bot that helps you have wiser, better conversations. Are you about to send a message to someone, and you're not sure whether it's going to lead to more anger? Type the message you're considering sending here.
       `
     }
   }
@@ -470,7 +470,7 @@ function sendSecondMessage(recipientId, messageText) {
 
 
 
-  request.post('http://localhost:5000/get_advice', { json: { key: "lala"} }, (err, res, response) => {
+  request.post('http://localhost:5000/get_advice', { json: messageText }, (err, res, response) => {
   if (err) { return console.log(err); }
   console.log("this is in the sccond message fn")
   console.log(response);
