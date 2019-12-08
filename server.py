@@ -76,9 +76,8 @@ model = BERTGRUSentiment(bert,
 
 def model_loader(path="./Bert-model.pt"):
     if os.path.isfile(path):
-        checkpoint = torch.load(path)
-        model = checkpoint['model']
-        model.load_state_dict(checkpoint['state_dict'])
+        checkpoint = torch.load(path, map_location=torch.device('cpu'))
+        model.load_state_dict(checkpoint)
 
         # Freeze all model parameters
         for param in model.parameters():
