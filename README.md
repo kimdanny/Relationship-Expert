@@ -14,3 +14,10 @@
 4. **Future improvement**
     - Train with other dataset that has multiple sentiment
     - Improve to real chatbot
+
+
+To get the '.pt' file, you can either  
+1. Run Sentiment_Analysis/Transformers for Sentiment Analysis.ipynb  
+
+2. Download ![Bert-model.pt](https://drive.google.com/open?id=1hQ48DhLarfIZxJA33GSpAK0Xn6ixCIrv) and place it in
+your working directory.
