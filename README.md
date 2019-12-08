@@ -1,4 +1,4 @@
-# Relationship-Expert
+# BotWise
 
 1. **Idea**
     1. Appeal that it is an idea that everyone would love. Everyone has a situation that whether or not they should send some risky message or not.
